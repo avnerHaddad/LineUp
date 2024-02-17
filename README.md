@@ -4,7 +4,7 @@ creates a shavzak for DirtyDance Team
 this shit is unironically pretty dogwater now
 how it works though is something like this could change later:
 
-Person class
+# Person class
 represents a person that is supposed to take shifts
 why is it usefull?
 * maybe we want to define shifts he cannot take before we run the shavzak?
