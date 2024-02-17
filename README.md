@@ -4,6 +4,25 @@ creates a shavzak for DirtyDance Team
 this shit is unironically pretty dogwater now
 how it works though is something like this could change later:
 
+# todolist
+ ## lets keep this updated and shit
+### currently doing
+ *listitem
+ *listItem
+### todo list db
+ *make master the main branch and delete main
+ * update the gitignore and remove all the bullshit here
+ * decide if we delete day class and replace it with a 7*4 grid of shifts
+ * make backtracking work like in the documentation
+ * implement more constraints
+ * implement prequesites
+ * create a better tostring for the shavzak class as stated in documentation
+ * make shavzak maker hold the previous shavzak
+ * update propegateconstraints function to work like in the documentation  
+ 
+ 
+ 
+
 # Person class
 represents a person that is supposed to take shifts
 why is it usefull?
