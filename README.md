@@ -67,13 +67,13 @@ this is the class where all the magic happens
                                 |
                                 |no
                                 v
-                        * can we fill up more cells?
-                      /                            \
-                    /no                              \yes
-                  v                                   \
-return in the recusion and continue to the next guess  \
-                                                        v
-                                                        guess the first cell from a list of available guesses and call the function again recursivly
+                        * can we fill up more cells? ------
+                      /                                    \
+                    /no                                      \yes
+                  v                                           \
+        return in the recusion and continue to the next guess     \
+                                                                    v
+                                                                guess the first cell from a list of available guesses and call the function again recursivly
     
     
 
