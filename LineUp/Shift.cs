@@ -17,5 +17,6 @@ public class Shift
         IsTaken = true;
         Person = person;
         Possibilities.Clear();
+        person.CurrentShifts++;
     }
 }

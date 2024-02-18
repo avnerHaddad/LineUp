@@ -7,10 +7,11 @@ class Program
     {
         List<Person> people = new List<Person>
         {
-            new Person("Avner", "sadir", 5),
-            new Person("Eilam", "sadir", 5),
-            new Person("Ohad", "sadir", 5),
-            new Person("goren", "sadir", 5)
+            new Person("Avner", "sadir", 1),
+            new Person("Eilam", "sadir", 7),
+            new Person("Ohad", "sadir", 7),
+            new Person("goren", "sadir", 7),
+            new Person("turkish", "sadir", 7)
 
         };
 
