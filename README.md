@@ -18,7 +18,9 @@ how it works though is something like this could change later:
  * implement prequesites
  * create a better tostring for the shavzak class as stated in documentation
  * make shavzak maker hold the previous shavzak
- * update propegateconstraints function to work like in the documentation  
+ * update propegateconstraints function to work like in the documentation
+ * add input checking
+ * add an option for backtracking to realise when it is unsolvable and return the closest thing to solved 
  
  
  
