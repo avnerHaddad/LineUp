@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "4vxk74RGd1+tHumRLghWKYDRbiA3nroCkGHTmophFSEx6ffLG75F7xMSfvuxCH550n+itxKdmQg8p+osbZj30g==",
+  "success": true,
+  "projectFilePath": "c:\\Users\\avner\\OneDrive\\Desktop\\web development\\projects\\lineup\\LineUp\\LineUp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\avner\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
