@@ -10,7 +10,7 @@ how it works though is something like this could change later:
  *listitem
  *listItem
 ### todo list db
- *make master the main branch and delete main
+ 
  * update the gitignore and remove all the bullshit here
  * decide if we delete day class and replace it with a 7*4 grid of shifts
  * make backtracking work like in the documentation
