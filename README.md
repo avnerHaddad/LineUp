@@ -11,7 +11,6 @@ how it works though is something like this could change later:
  *listItem
 ### todo list db
  
- * update the gitignore and remove all the bullshit here
  * decide if we delete day class and replace it with a 7*4 grid of shifts
  * make backtracking work like in the documentation
  * implement more constraints
