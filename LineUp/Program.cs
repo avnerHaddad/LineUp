@@ -7,18 +7,44 @@ class Program
     static void Main(string[] args)
     {
         var listener = new HttpListener();
-        listener.Prefixes.Add("http://localhost:8081/");
+        listener.Prefixes.Add("http://localhost:8081/"); // Set the URL to serve your Vue.js app
         listener.Start();
         Console.WriteLine("Listening on http://localhost:8081/");
+
         while (true)
         {
             var context = listener.GetContext();
-            var path = context.Request.Url.LocalPath.TrimStart('/');
-            if (string.IsNullOrEmpty(path))
+            var requestUrl = context.Request.Url.AbsolutePath;
+            var currDir = Directory.GetCurrentDirectory();
+            var neededDir = Directory.GetParent(currDir).Parent.Parent.Parent.ToString().Replace('\\', '/');
+            Console.WriteLine($"{currDir}");
+            var fullDir = neededDir + "/ClientApp/public/";
+            var filePath = Path.Combine(fullDir, requestUrl.TrimStart('/'));
+            Console.WriteLine(filePath);
+
+            if (filePath.EndsWith("/"))
             {
-                path = "index.html"; // serve index.html by default
+                filePath += "index.html"; // Serve index.html by default
             }
-            ServeFile(context.Response, path);
+
+            if (File.Exists(filePath))
+            {
+                var response = context.Response;
+                var fileContent = File.ReadAllText(filePath);
+
+                response.ContentType = "text/html"; // Set the appropriate content type
+                response.ContentLength64 = fileContent.Length;
+
+                using (var writer = new StreamWriter(response.OutputStream))
+                {
+                    writer.Write(fileContent);
+                }
+            }
+            else
+            {
+                context.Response.StatusCode = (int)HttpStatusCode.NotFound;
+                context.Response.Close();
+            }
         }
 
         //List<Person> people = new List<Person>
@@ -36,46 +62,6 @@ class Program
 
         //// Implement ToString in Shavzak to print its state
         //Console.WriteLine(shavzakCreator.NextShavzak.ToString());
-    }
 
-    static void ServeFile(HttpListenerResponse response, string filePath)
-    {
-        try
-        {
-            // Determine the MIME type based on the file extension
-            string mimeType = GetMimeType(filePath);
-
-            // Set the Content-Type header
-            response.ContentType = mimeType;
-
-            // Serve the file
-            using (var fileStream = File.OpenRead(filePath))
-            {
-                fileStream.CopyTo(response.OutputStream);
-            }
-        }
-        catch (Exception ex)
-        {
-            // Handle errors
-            response.StatusCode = (int)HttpStatusCode.InternalServerError;
-            response.StatusDescription = ex.Message;
-        }
-        finally
-        {
-            response.Close();
-        }
-    }
-
-    static string GetMimeType(string filePath)
-    {
-        string ext = Path.GetExtension(filePath).ToLowerInvariant();
-        switch (ext)
-        {
-            case ".html": return "text/html";
-            case ".css": return "text/css";
-            case ".js": return "application/javascript";
-            // Add more cases as needed
-            default: return "application/octet-stream"; // fallback MIME type
-        }
     }
 }
