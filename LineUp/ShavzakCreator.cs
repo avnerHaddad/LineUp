@@ -46,6 +46,19 @@ public class ShavzakCreator
         }
         return false;
     }
+    private Person findNextAvailablePerson(Shift shift){
+        //finds the next available person to shift, removes people who cant and removes that person when returning him
+        List<Person> originalPossibilities= shift.Possibilities.ToList<Person>();
+        foreach(Person person in originalPossibilities){
+            if(person.MaxShiftsPerWeek > person.CurrentShifts){
+                shift.Possibilities.Remove(person);
+                return person;
+            }else{
+                shift.Possibilities.Remove(person);
+            }
+        }
+        return null;
+    }
 
     private Shavzak TakeAGuess(Shavzak newShavzak)
     {
@@ -55,7 +68,8 @@ public class ShavzakCreator
             {
                 if (shift.Possibilities.Count > 0)
                 {
-                    shift.Fill(shift.Possibilities[0]);
+                    Person person_to_fill = findNextAvailablePerson(shift);
+                    shift.Fill(person_to_fill);
                     return newShavzak;
                 }
             }
