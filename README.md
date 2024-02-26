@@ -20,7 +20,9 @@ how it works though is something like this could change later:
  * make shavzak maker hold the previous shavzak
  * update propegateconstraints function to work like in the documentation
  * add input checking
- * add an option for backtracking to realise when it is unsolvable and return the closest thing to solved 
+ * add an option for backtracking to realise when it is unsolvable and return the closest thing to solved
+ * fe should have option to login to all users each user can enter his own conditions, 133rikod can enter for everyone and edit it all
+ * generating a shavzak can only be done through 133rikod
  
  
  
