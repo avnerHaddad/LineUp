@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net.Http.Json;
-using Newtonsoft.Json;
 
 
 public class Shavzak
@@ -23,13 +22,6 @@ public class Shavzak
             Days.Add(new Day("saturday"));    
         People = people;
     }
-
-    public void JsonToFile(string filename)
-    {
-        string json = JsonConvert.SerializeObject(this, Formatting.Indented);
-        File.WriteAllText(filename, json);
-    }
-
     public bool IsFilled()
     {
         foreach (var day in Days)
@@ -41,17 +33,6 @@ public class Shavzak
         }
         return true;
     }
-
-    public void ReadJsonFromFile(string filename)
-    {
-        string json = File.ReadAllText(filename);
-        Shavzak shavzak = JsonConvert.DeserializeObject<Shavzak>(json);
-        if (shavzak != null)
-        {
-            Days = shavzak.Days;
-        }
-    }
-
     public override string ToString(){
         string shifts = "";
         foreach(Day day in Days){
