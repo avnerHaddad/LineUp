@@ -13,7 +13,7 @@ how it works though is something like this could change later:
  
  * update the gitignore and remove all the bullshit here
  * decide if we delete day class and replace it with a 7*4 grid of shifts
- * make backtracking work like in the documentation
+ * make backtracking save all solved boards then rank them for best to worst and return tem from a stack that user can pop each time in fe
  * implement more constraints
  * implement prequesites
  * create a better tostring for the shavzak class as stated in documentation
