@@ -14,6 +14,13 @@ how it works though is something like this could change later:
  * update the gitignore and remove all the bullshit here
  * decide if we delete day class and replace it with a 7*4 grid of shifts
  * make backtracking save all solved boards then rank them for best to worst and return tem from a stack that user can pop each time in fe
+ * each person has a score to each shift
+   defults to 0
+   1 if he likes it
+   0 indifferent to it
+   -1 if he dosnt like it
+when we create a shavzak we can score it if we sum up all getPersonsPreference(shift, shift.currentPerson)
+we need to figure out the correct way to datastructure it nicely tho
  * implement more constraints
  * implement prequesites
  * create a better tostring for the shavzak class as stated in documentation
